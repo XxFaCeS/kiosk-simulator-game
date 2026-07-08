@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiosk Simulator 3D</title>
+  <link rel="stylesheet" href="/src/ui/style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Hauptmenü -->
+    <div id="main-menu" class="fullscreen-menu">
+      <h1>🏪 Kiosk Simulator 3D</h1>
+      <p class="subtitle">Dein eigener kleiner Kiosk – vollständig fiktiv, vollständig spielbar.</p>
+      <button id="btn-new-game" class="menu-btn">Neues Spiel</button>
+      <button id="btn-continue" class="menu-btn">Spiel laden</button>
+      <div class="menu-help">
+        <b>Steuerung:</b> WASD = Bewegen · Maus = Umsehen · E = Interagieren ·
+        TAB = Tablet · ESC = Pause
+      </div>
+    </div>
+
+    <!-- Pausemenü -->
+    <div id="pause-menu" class="fullscreen-menu hidden">
+      <h1>Pause</h1>
+      <button id="btn-resume" class="menu-btn">Weiterspielen</button>
+      <button id="btn-save" class="menu-btn">Speichern</button>
+      <button id="btn-load" class="menu-btn">Laden</button>
+      <button id="btn-quit" class="menu-btn">Zum Hauptmenü</button>
+      <div id="pause-message" class="menu-help"></div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div id="hud-top">
+        <div class="hud-box" id="hud-money">💰 0,00 €</div>
+        <div class="hud-box" id="hud-time">🕐 Tag 1 · 08:00</div>
+        <div class="hud-box" id="hud-level">⭐ Level 1 · 0 XP</div>
+        <div class="hud-box" id="hud-rep">❤️ Ruf 50</div>
+      </div>
+      <div id="hud-crosshair">·</div>
+      <div id="hud-interact" class="hidden"></div>
+      <div id="hud-notify"></div>
+      <div id="hud-hold" class="hidden"></div>
+    </div>
+
+    <!-- Dialog / Panel Container (Kasse, Tablet, Lotto, Pakete, Altersprüfung, Tagesabschluss) -->
+    <div id="panel-overlay" class="hidden">
+      <div id="panel-window"></div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
